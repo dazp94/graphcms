@@ -7,12 +7,12 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background: white;
 `;
 
 const LinkContainer = styled.a`
   margin: 5px;
   text-decoration: none;
+  color: inherit;
 `;
 
 const Header = () => (
