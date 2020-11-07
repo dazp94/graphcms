@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
-import { theme } from "../../theme";
+import { theme } from "../../../config/theme";
+import Header from "./Header";
 import Helmet from "./Helmet";
 
 const GlobalStyle = createGlobalStyle`
@@ -17,12 +17,15 @@ const GlobalStyle = createGlobalStyle`
 
 const PageContainer = styled.div`
   min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
 `;
 
 const Page = ({ children }) => (
   <PageContainer>
     <Helmet />
     <GlobalStyle />
+    <Header />
     {children}
   </PageContainer>
 );
