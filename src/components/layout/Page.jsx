@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 import { theme } from "../../theme";
+import Helmet from "./Helmet";
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Lato');
-
   body {
     font-family: 'Lato', sans-serif;
     background: ${(props) =>
@@ -22,6 +21,7 @@ const PageContainer = styled.div`
 
 const Page = ({ children }) => (
   <PageContainer>
+    <Helmet />
     <GlobalStyle />
     {children}
   </PageContainer>

@@ -1,0 +1,12 @@
+import { Helmet as ReactHelmet } from "react-helmet";
+
+const Helmet = () => (
+  <ReactHelmet>
+    <title>Graphcms blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </ReactHelmet>
+);
+export default Helmet;
