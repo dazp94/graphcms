@@ -1,6 +1,7 @@
-import Page from "../components/layout/Page";
+import { ChakraProvider, extendTheme } from "@chakra-ui/core";
 import { useEffect } from "react";
-
+import Page from "../components/layout/Page";
+import "../../config/index.css";
 const App = ({ Component, pageProps }) => {
   useEffect(() => {
     document.body.className = (document.body.className ?? "").replace(
@@ -9,10 +10,19 @@ const App = ({ Component, pageProps }) => {
     );
   }, []);
 
+  const config = {
+    useSystemColorMode: true,
+    initialColorMode: "light",
+  };
+
+  const customTheme = extendTheme({ config });
+
   return (
-    <Page>
-      <Component {...pageProps} />
-    </Page>
+    <ChakraProvider theme={customTheme}>
+      <Page>
+        <Component {...pageProps} />
+      </Page>
+    </ChakraProvider>
   );
 };
 
