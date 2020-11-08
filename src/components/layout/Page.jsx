@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 import theme from "../../../config/theme";
-import ThemeContext from "../../context/ThemeContext";
+import ThemeContext from "../../context/theme/ThemeContext";
+import ThemeToggler from "../../context/theme/ThemeToggler";
 import Header from "./Header";
 import Helmet from "./Helmet";
 
@@ -24,12 +25,24 @@ const PageContainer = styled.div`
 
 const Page = ({ children }) => {
   const themeContext = useContext(ThemeContext);
+
+  const toggleTheme = (contextTheme) =>
+    contextTheme.isDark
+      ? setState({ ...state, theme: theme.light })
+      : setState({ ...state, theme: theme.dark });
+
+  const [state, setState] = useState({
+    theme: themeContext.theme,
+    toggleTheme: toggleTheme,
+  });
+
   return (
-    <ThemeContext.Provider>
+    <ThemeContext.Provider value={state}>
       <PageContainer>
         <Helmet />
-        <GlobalStyle theme={themeContext} />
+        <GlobalStyle theme={state.theme} />
         <Header />
+        <ThemeToggler />
         {children}
       </PageContainer>
     </ThemeContext.Provider>
