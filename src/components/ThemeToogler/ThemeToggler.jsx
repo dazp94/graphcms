@@ -1,12 +1,8 @@
-import { Button, useColorMode } from "@chakra-ui/core";
+import { Switch, useColorMode } from "@chakra-ui/react";
 
 const ThemeToggler = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return (
-    <Button onClick={toggleColorMode}>
-      Toggle {colorMode === "light" ? "Dark" : "Light"}
-    </Button>
-  );
+  const { toggleColorMode } = useColorMode();
+  return <Switch onChange={toggleColorMode} />;
 };
 
 export default ThemeToggler;
