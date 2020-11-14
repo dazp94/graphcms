@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import Header from "./Header";
-import Helmet from "./Helmet";
-import ThemeToggler from "./ThemeToggler";
+import Header from "../Header";
+import Helmet from "../Helmet";
+import ThemeToggler from "../ThemeToogler";
 
 const PageContainer = styled.div`
   min-height: calc(100vh);

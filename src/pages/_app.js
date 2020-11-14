@@ -1,6 +1,6 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/core";
 import theme from "../../config/theme";
-import Page from "../components/layout/Page";
+import Page from "../components/Page";
 
 const App = ({ Component, pageProps }) => {
   const customTheme = extendTheme(theme);
