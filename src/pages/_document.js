@@ -1,7 +1,6 @@
 import Document from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { ColorModeScript } from "@chakra-ui/core";
-
+import { ColorModeScript } from "@chakra-ui/react";
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
