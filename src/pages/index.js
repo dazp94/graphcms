@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Heading } from "@chakra-ui/react";
 import { graphcms } from "../utils/graphcms";
 
 export async function getStaticProps() {
@@ -20,11 +21,17 @@ export async function getStaticProps() {
   };
 }
 
-const Index = ({ posts }) =>
-  posts.map(({ slug, name }) => (
-    <Link key={slug} href={`/posts/${slug}`}>
-      <a>{`${name}`}</a>
-    </Link>
-  ));
+const Index = ({ posts }) => {
+  return (
+    <>
+      <Heading>Welcome</Heading>
+      {posts.map(({ slug, name }) => (
+        <Link key={slug} href={`/posts/${slug}`}>
+          <a>{`${name}`}</a>
+        </Link>
+      ))}
+    </>
+  );
+};
 
 export default Index;

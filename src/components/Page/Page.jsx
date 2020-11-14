@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Header from "../Header";
 import Helmet from "../Helmet";
-import ThemeToggler from "../ThemeToogler";
 
 const PageContainer = styled.div`
   min-height: calc(100vh);
@@ -11,15 +10,19 @@ const PageContainer = styled.div`
   flex-direction: column;
 `;
 
-const Page = ({ children }) => {
-  return (
-    <PageContainer>
-      <Helmet />
-      <Header />
-      <ThemeToggler />
-      {children}
-    </PageContainer>
-  );
-};
+const ChildrenContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
+const Page = ({ children }) => (
+  <PageContainer>
+    <Helmet />
+    <Header />
+    <ChildrenContainer>{children}</ChildrenContainer>
+  </PageContainer>
+);
 
 export default Page;

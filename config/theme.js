@@ -1,4 +1,7 @@
 const theme = {
+  shadows: {
+    outline: "none",
+  },
   styles: {
     global: {
       body: {
